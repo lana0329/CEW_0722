@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chicken Eats Worms</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <!-- <script src="libraries/p5.sound.min.js"></script> -->
+
+</head>
+
+<body>
+    <!-- header -->
+    <div class="wrapper">
+        <header class="header">
+            <!-- banner pic -->
+            <div class="banner">
+                <img src="pic/banner.png" alt="">
+            </div>
+            <!-- icon group -->
+            <div class="nav__icon-group">
+                <!-- <a href="https://instagram.com/lana329_art?igshid=q2omkfxw95bd" class="icon-btn">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:jenny0329lamina@gmail.com" class="icon-btn">
+                    <i class="fa fa-send-o" aria-hidden="true"></i>
+                </a> -->
+                <button id="howToPlay" class="btn-howToPlay"><img src="pic/icons8-help-96.png" alt=""> ← How To Play :D</button>
+            </div>
+        </header>
+    </div>
+    <!-- hoe to play -->
+    <div id="guide" class="guide">
+        <!-- Modal content -->
+        <div class="guide-content">
+            <span class="close">&times;</span>
+            <img src="pic/guide-pc.png" alt="" class='guide-pc'>
+            <img src="pic/guide-phone.png" alt="" class='guide-phone'>
+        </div>
+
+    </div>
+    <!-- pre / resume / next -->
+    <div class="container upper">
+        <button type="button" onclick="scene.preLevel()" class="btn pre">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <button type="button" onclick="scene.newGame()" class="btn resume">
+            <img src="pic/reload.svg" alt="">
+        </button>
+        <button type="button" onclick="scene.nextLevel()" class="btn next">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </div>
+    </div>
+
+    <footer>
+        &copy; 2021 yclee@nycu.edu.tw
+    </footer>
+
+    <!-- script for "how to play" -->
+    <script>
+        var guide = document.getElementById("guide");
+        var btn = document.getElementById("howToPlay");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            guide.style.display = "flex";
+        }
+        span.onclick = function() {
+            guide.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == guide) {
+                guide.style.display = "none";
+            }
+        }
+    </script>
+    <!-- <script src="js/jquery-3.2.1.min.js"></script> -->
+    <!-- <script src="custom.js"></script> -->
+    <script src="sketch.js"></script>
+    <script src="Scene.js"></script>
+    <script src="PicturePak.js"></script>
+    <script src="Game.js"></script>
+    <script src="Grid.js"></script>
+    <script src="Chess.js"></script>
+    <script src="Chicken.js"></script>
+    <script src="Worm.js"></script>
+    <script src="Grass.js"></script>
+</body>
+
+</html>
